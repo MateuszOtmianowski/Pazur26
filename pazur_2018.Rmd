@@ -1,0 +1,835 @@
+---
+title: "PAZUR 26"
+subtitle: "Programowanie funkcyjne w R z pakietem purrr"
+author: "25 stycznia 2018 | Mateusz Otmianowski"
+output:
+  ioslides_presentation:
+    widescreen: true
+    css: ['www/style.css']
+    logo: 'www/img/logo_horizontal.png'
+    template: custom_template.html
+    fig_width: 14
+    fig_height: 8.7
+    self_contained: true
+    smart: false
+    includes:
+        in_header: ['www/jquery.min.js', 'www/script.js']
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, dpi = 60, warning = F, message = F)
+library(dplyr)
+library(data.table)
+library(DT)
+library(formattable)
+```
+
+<style>
+
+pre {
+    left: 0;
+    padding: 10px 0 10px 10px;
+    font-family: 'Monaco';
+    font-size: 18px;
+    width: 100%;
+    color: black;
+}
+span.com {
+    color: #0093AF !important;
+}
+
+.prettyprint .pln {
+    color: black !important;
+}
+
+.quote {
+    color: #666;
+    font-size: 50px;
+    margin-top: 200px;
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+.annotation_quote {
+    color: #007fa3;
+    font-size: 30px;
+    margin-top: 0px;
+    text-align: right;
+}
+
+table.dataTable th {
+    font-size: 30px;
+}    
+
+</style>
+<!-- https://stackoverflow.com/questions/45101045/why-use-purrrmap-instead-of-lapply
+http://colinfay.me/purrr-web-mining/ -->
+
+## 
+<p class = 'quote'> *"R, at its heart, is a functional programming (FP) language. This means that it provides many tools for the creation and **manipulation of functions**."*<p>
+<p class = 'annotation_quote'> Hadley Wickham, *Advanced R*<p>
+
+## Funkcje możemy przypisywać do zmiennych
+```{r echo = T}
+f <- paste
+
+f('Hello', 'world')
+```
+
+## Funkcje możemy przechowywać w listach
+```{r echo = T}
+fun_list <- list(avg = mean, med = median, st_dev = sd)
+set.seed(123); nums <- rnorm(1000, 10, 5)
+```
+
+## Funkcje możemy przechowywać w listach
+```{r echo = T}
+fun_list <- list(avg = mean, med = median, st_dev = sd)
+set.seed(123); nums <- rnorm(1000, 10, 5)
+
+fun_list$avg(nums)
+```
+
+## Funkcje możemy przechowywać w listach
+```{r echo = T}
+fun_list <- list(avg = mean, med = median, st_dev = sd)
+set.seed(123); nums <- rnorm(1000, 10, 5)
+
+fun_list$avg(nums)
+fun_list$med(nums) 
+```
+
+## Funkcje możemy przechowywać w listach
+```{r echo = T}
+fun_list <- list(avg = mean, med = median, st_dev = sd)
+set.seed(123); nums <- rnorm(1000, 10, 5)
+
+fun_list$avg(nums)
+fun_list$med(nums) 
+fun_list[[3]](nums) 
+```
+
+## Funkcje możemy zwracać jako wynik innej funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+fun_generator <- function(operation){
+    if (operation == 'multiply') return(function(x, y) x * y)
+    else if (operation == 'add') return(function(x, y) x + y)
+    else return(function(x, y) 'Unknown operation')
+}
+```
+
+## Funkcje możemy zwracać jako wynik innej funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+fun_generator <- function(operation){
+    if (operation == 'multiply') return(function(x, y) x * y)
+    else if (operation == 'add') return(function(x, y) x + y)
+    else return(function(x, y) 'Unknown operation')
+}
+fun_generator('multiply')(8, 2)
+```
+
+## Funkcje możemy zwracać jako wynik innej funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+fun_generator <- function(operation){
+    if (operation == 'multiply') return(function(x, y) x * y)
+    else if (operation == 'add') return(function(x, y) x + y)
+    else return(function(x, y) 'Unknown operation')
+}
+fun_generator('multiply')(8, 2)
+fun_generator('add')(8, 2)
+```
+
+## Funkcje możemy zwracać jako wynik innej funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+fun_generator <- function(operation){
+    if (operation == 'multiply') return(function(x, y) x * y)
+    else if (operation == 'add') return(function(x, y) x + y)
+    else return(function(x, y) 'Unknown operation')
+}
+fun_generator('multiply')(8, 2)
+fun_generator('add')(8, 2)
+fun_generator('ldkwl')(8, 2)
+```
+
+## Funkcje mogą być argumentem innych funkcji
+```{r echo = T}
+library(purrr)
+
+map(list(9, 16, 25), sqrt)
+```
+
+## Jaka jest różnica pomiędzy pętlami poniżej?
+```{r echo = T, results = 'hide'}
+res1_loop <- vector('double', ncol(iris) - 1)
+
+for (i in seq_along(iris[, -5])) {
+    res1_loop[[i]] <- mean(iris[[i]], na.rm = T)
+}
+
+res2_loop <- vector('double', ncol(iris) - 1)
+
+for (i in seq_along(iris[, -5])) {
+    res2_loop[[i]] <- median(iris[[i]], na.rm = T)
+}
+```
+
+## Jaka jest różnica pomiędzy pętlami poniżej?
+```{r echo = T, results = 'hide'}
+res1_loop <- vector('double', ncol(iris) - 1)
+
+for (i in seq_along(iris[, -5])) {
+    res1_loop[[i]] <- mean(iris[[i]], na.rm = T) # oblicza średnią
+}
+
+res2_loop <- vector('double', ncol(iris) - 1)
+
+for (i in seq_along(iris[, -5])) {
+    res2_loop[[i]] <- median(iris[[i]], na.rm = T) # oblicza medianę
+}
+```
+
+## Jaka jest różnica pomiędzy pętlami poniżej?
+```{r echo = T, results = 'hide'}
+res1_loop <- vector('double', ncol(iris) - 1)
+
+for (i in seq_along(iris[, -5])) {
+    res1_loop[[i]] <- mean(iris[[i]], na.rm = T) # oblicza średnią
+}
+
+res2_loop <- vector('double', ncol(iris) - 1)
+
+for (i in seq_along(iris[, -5])) {
+    res2_loop[[i]] <- median(iris[[i]], na.rm = T) # oblicza medianę
+}
+```
+Pętle <em>for</em> podkreślają obiekty i mechanizm implementacji, natomiast ukrywają funkcje.
+
+## W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako: {.top-bottom title-size="small"}
+
+<br>
+
+```{r echo = T}
+library(purrr)
+
+res1_fp <- map_dbl(iris[, -5], mean)
+res2_fp <- map_dbl(iris[, -5], median)
+
+```
+
+## W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako: {.top-bottom title-size="small"}
+
+<br>
+
+```{r echo = T}
+library(purrr)
+
+res1_fp <- map_dbl(iris[, -5], mean)
+res2_fp <- map_dbl(iris[, -5], median)
+
+res1_fp
+```
+
+## W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako: {.top-bottom title-size="small"}
+
+<br>
+
+```{r echo = T}
+library(purrr)
+
+res1_fp <- map_dbl(iris[, -5], mean)
+res2_fp <- map_dbl(iris[, -5], median)
+
+res1_fp
+
+identical(res1_loop, unname(res1_fp)) & identical(res2_loop, unname(res2_fp))
+```
+
+## Celem pakietu purrr jest uproszczenie tworzenie pętli {.top-bottom title-size="medium"}
+
+<br>
+
+- Podstawową funkcją pakietu jest funkcja map(.x, .f, ...), która gdy .x jest wektorem lub listą wykona funkcję .f dla każdego ich elementu, a przypadku ramki danych dla wykona fukcję .f dla każdej kolumny.
+- Czasami przydaje się alternatywna składnia map(.x, .f = ~ ZRÓB COŚ Z .x)
+
+## Funkcja map zwraca listę, aby otrzymać wynik w innym formacie możemy wykorzystać inne jej warianty:
+- map_lgl zwraca wektor wartości logicznych,
+- map_int zwraca wektor liczb całkowitych,
+- map_dbl zwraca wektor liczb zmiennoprzecinkowych,
+- map_chr zwraca wektor tekstowy.
+
+## map() od map_dbl() różni się tylko klasą zwracanego obiektu
+```{r echo = T}
+l <- list(rnorm(100), rnorm(100))
+class(map(l, mean))
+```
+
+## map() od map_dbl() różni się tylko klasą zwracanego obiektu
+```{r echo = T}
+l <- list(rnorm(100), rnorm(100))
+class(map(l, mean))
+class(map_dbl(l, mean))
+```
+
+## map() od map_dbl() różni się tylko klasą zwracanego obiektu
+```{r echo = T}
+l <- list(rnorm(100), rnorm(100))
+class(map(l, mean))
+class(map_dbl(l, mean))
+
+identical(unlist(map(l, mean)), map_dbl(l, mean))
+```
+
+## Przykłady użycia map {.top-bottom title-size="small"}
+```{r echo = T}
+set.seed(1)
+# lista dwóch wektorów
+v <- list(c(NA, rnorm(99, 10, 5)), # NA na początku wektora
+          rnorm(100, 10, 5)) 
+```
+
+## Przykłady użycia map {.top-bottom title-size="small"}
+```{r echo = T}
+set.seed(1)
+# lista dwóch wektorów
+v <- list(c(NA, rnorm(99, 10, 5)), # NA na początku wektora
+          rnorm(100, 10, 5))
+
+map_dbl(v, mean) # liczymy średnią dla każdego wektora
+```
+
+## Przykłady użycia map {.top-bottom title-size="small"}
+```{r echo = T}
+set.seed(1)
+# lista dwóch wektorów
+v <- list(c(NA, rnorm(99, 10, 5)), # NA na początku wektora
+          rnorm(100, 10, 5))
+
+map_dbl(v, mean) # liczymy średnią dla każdego wektora
+map_dbl(v, mean, na.rm = T) # dodatkowy argument do średniej, żeby pomijać NA
+```
+
+## Przykłady użycia map, alternatywny zapis {.top-bottom title-size="small"}
+```{r echo = T}
+map_dbl(v, mean, na.rm = T) 
+map_dbl(v, ~ mean(., na.rm = T)) # z użyciem ~, . oznacza miejsce, gdzie chcemy umieścić argument
+```
+
+## Przykłady użycia map, alternatywny zapis {.top-bottom title-size="small"}
+```{r echo = T}
+map_dbl(v, mean, na.rm = T) 
+map_dbl(v, ~ mean(., na.rm = T)) # z użyciem ~, . oznacza miejsce, gdzie chcemy umieścić argument
+map_dbl(v, ~ sum(., na.rm = T) / length(.[!is.na(.)])) # . można umieścić w kilku miejscach
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list 
+```{r echo = T}
+v <- c(4, 9, 25)
+
+sqrt(v)
+map_dbl(v, sqrt)
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list
+```{r echo = T}
+l <- as.list(v)
+
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list
+```{r echo = T}
+l <- as.list(v)
+
+sqrt_safe <- safely(sqrt)
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list
+```{r echo = T}
+l <- as.list(v)
+
+sqrt_safe <- safely(sqrt)
+sqrt_safe(l)
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list
+```{r echo = T}
+l <- as.list(v)
+
+sqrt_safe <- safely(sqrt)
+sqrt_safe(l)
+
+map_dbl(l, sqrt)
+```
+
+## map + safely
+```{r echo = T}
+head(map(l, sqrt_safe), n = 2)
+```
+
+## map + safely
+- map(.x, 'nazwa') wywołuje z każdej listy komponent 'nazwa'
+```{r echo = T}
+map(l, sqrt_safe) %>% map_dbl('result')
+```
+- map(.x, n) wywołuje z każdej listy komponent o numerze n
+```{r echo = T}
+map(l, sqrt_safe) %>% map_dbl(1) # wyniki
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list, zwłaszcza zagnieżdżonych
+```{r echo = T}
+l1 <- as.list(seq(2, 6, 1) ^ 2)
+l2 <- as.list(seq(7, 12, 1) ^ 2)
+l3 <- as.list(seq(13, 20, 1) ^ 2)
+
+list_of_lists <- list(l1, l2, l3)
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list, zwłaszcza zagnieżdżonych
+```{r}
+head(list_of_lists[1])
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list, zwłaszcza zagnieżdżonych
+```{r echo = T}
+res_sqrt <- map(list_of_lists, ~ map(., sqrt)) 
+```
+
+## Użyteczność map widać przede wszystkim w przypadku list, zwłaszcza zagnieżdżonych
+```{r}
+head(res_sqrt, 1)
+```
+
+## map2 i pmap umożliwiają iteracje po dwóch lub więcej wektorach/listach jednocześnie {.top-bottom title-size="medium"}
+
+<br>
+
+- map2( .x, .y, .f, ...) po dwóch wektorach/listach,
+- pmap( .l , .f , ...) po dwóch i więcej wektorach/listach, gdzie .l jest listą wektorów/list;
+- przy zastosowanu zapisu z "~":
+    - w map2 do pierwszego argumentu odwołujemy się jako .x, a do drugiego .y
+    - w pmap odwołujemy się do argumentów jako ..n, gdzie n odpowiada kolejności podania
+
+## Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same {.top-bottom title-size="medium"}
+```{r echo = T, eval = F}
+output1 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
+                df2 = data.frame(c = rnorm(5), d = rnorm(5))) # 5 wierszy, 2 kolumny
+
+```
+
+## Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same {.top-bottom title-size="medium"}
+```{r echo = T, eval = F}
+output1 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
+                df2 = data.frame(c = rnorm(5), d = rnorm(5))) # 5 wierszy, 2 kolumny
+
+output2 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
+                df2 = data.frame(c = rnorm(10), d = rnorm(10))) # 10 wierszy (różnica!), 2 kolumny 
+
+```
+
+## Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same {.top-bottom title-size="medium"}
+```{r echo = T}
+output1 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
+                df2 = data.frame(c = rnorm(5), d = rnorm(5))) # 5 wierszy, 2 kolumny
+
+output2 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
+                df2 = data.frame(c = rnorm(10), d = rnorm(10))) # 10 wierszy (różnica!), 2 kolumny 
+
+map2_lgl(output1, output2, identical)
+```
+
+## Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same {.top-bottom title-size="medium"}
+```{r echo = T, eval = T}
+set.seed(2); output1 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), 
+                             df2 = data.frame(c = rnorm(5), d = rnorm(5)))
+
+set.seed(2); output2 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), 
+                             df2 = data.frame(c = rnorm(10), d = rnorm(10)))
+
+map2_lgl(output1, output2, identical)
+```
+
+## Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same  {.top-bottom title-size="medium"}
+```{r echo = T, eval = T}
+set.seed(2); output1 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), 
+                             df2 = data.frame(c = rnorm(5), d = rnorm(5)))
+
+set.seed(2); output2 <- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), 
+                             df2 = data.frame(c = rnorm(10), d = rnorm(10)))
+
+map2_lgl(output1, output2, identical)
+
+map2_lgl(output1, output2, ~ identical(.x, .y)) # alternatywna składnia map2
+```
+
+## Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same {.top-bottom title-size="medium"}
+```{r echo = T, eval = T}
+map2_lgl(output1, output2, identical)
+
+# to samo co map2 za pomocą pętli
+output_comp <- vector('logical', length(output1)) 
+
+for (i in seq(1, length(output1), 1)) output_comp[i] <- identical(output1[[i]], output2[[i]])
+output_comp
+```
+
+<!--
+## pmap przykład
+```{r}
+x <- list(rnorm(100, 1, 10), rnorm(100, 1, 10), rnorm(100, 1, 10))
+
+y <- c(mean, median, sd)
+z <- c(1, 2, 3)
+map2(x,y, function(x,y) y(x))
+# pmap(list(x, y, z), sum)
+# pmap(list(x, y, z), ~ ..1 + ..2 + ..3)
+```  
+-->
+
+## invoke_map() = map() z listą funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+set.seed(2); k <- rnorm(100, 10, 5)
+fun_list <- list(max = max, median  = median, min = min)
+```
+
+## invoke_map() = map() z listą funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+set.seed(2); k <- rnorm(100, 10, 5)
+fun_list <- list(max = max, median  = median, min = min)
+
+map_dbl(fun_list, function(f) f(k))
+```
+
+## invoke_map() = map() z listą funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+set.seed(2); k <- rnorm(100, 10, 5)
+fun_list <- list(max = max, median  = median, min = min)
+
+map_dbl(fun_list, function(f) f(k))
+invoke_map_dbl(fun_list, x = k) # invoke_map(fun_list, k) nie działa!
+```
+
+## invoke_map() = map() z listą funkcji {.top-bottom title-size="medium"}
+```{r echo = T}
+set.seed(2); k <- rnorm(100, 10, 5)
+fun_list <- list(max = max, median  = median, min = min)
+
+map_dbl(fun_list, function(f) f(k))
+invoke_map_dbl(fun_list, x = k) # invoke_map(fun_list, k) nie działa!
+identical(map_dbl(fun_list, function(f) f(k)), invoke_map_dbl(fun_list, x = k))
+```
+
+## Zastosowanie listy funkcji do kolumn w ramce danych {.top-bottom title-size="medium"}
+```{r echo = T}
+library(magrittr)
+
+res_purrr <- map(iris[, -5], ~ invoke_map(fun_list, x = .)) %>% 
+    unlist() %>% 
+    data.frame(calc_purrr = .)
+
+res_purrr <- cbind(measure_name = rownames(res_purrr), res_purrr) # dodaje kolumnę z nazwy wierszy
+rownames(res_purrr) <- c() # usuwamy nazwy wierszy
+head(res_purrr, 6)
+```
+
+## Zastosowanie listy funkcji do kolumn w ramce danych {.top-bottom title-size="medium"}
+```{r echo = T}
+library(dplyr)
+
+res_dplyr <- summarise_at(iris, 
+                          .vars = seq(1, 4, 1), 
+                          list(max = max, median  = median, min = min))
+
+names(res_dplyr) <- stringr::str_replace(names(res_dplyr), '_', '.')
+
+res_dplyr %>% 
+    tidyr::gather(measure_name, calc_dplyr) %>% 
+    inner_join(res_purrr, by = 'measure_name') %>% 
+    assertr::verify(calc_purrr == calc_dplyr) %>% 
+    head(3)
+```
+
+## purrr oferuje podbną funkcjonalność do funkcji z rodziny apply, jednak jest bardziej spójny i przewidywalny {.top-bottom title-size="small"}
+```{r }
+
+Kategoria <- c('Pierwszy argument', 'Dodatkowe argumenty do funkcji', 'Przewidywalność klasy wyniku')
+
+purrr <- c('Dane', 
+          'Podajemy po nazwie funkcji',
+          'Można przewidzieć z nazwy funkcji')
+
+apply <- c('<i>lapply()</i> dane, <i>mapply()</i> funkcja',
+           'Dla większości funkcji "...", <i>mapply()</i> More.Args',
+           'Tylko dla <i>vapply()</i>')
+
+data.frame(Kategoria, purrr, apply) %>% formattable() %>% 
+                                as.datatable(options = list(dom = 't', 
+                                                            ordering = F,
+                                                            columnDefs = list(
+                                                                list(targets = 0, className = 'dt-center', width = '10%'),
+                                                                list(targets = 1:3, className = 'dt-left', width = '30%')
+                                                                ),
+                                                                rownames = F))
+```
+    
+## purrr + data.frame {pic=divider_grue}
+    
+## Zagnieżdżamy dane według gatunku:  {.top-bottom title-size="medium"}
+
+```{r echo = T}
+library(magrittr)
+library(broom)
+library(tidyr)
+library(dplyr)
+library(purrr)
+library(plotly)
+
+iris_nstd <- iris %>% 
+    as_tibble() %>% 
+    nest(-Species) # zagnieżdża dane według wartości w kolumnie Species
+```
+
+```{r echo = F}
+iris_nstd
+```
+
+## Dane w kolumnie 'data' przechowywane są jako lista: {.top-bottom title-size="medium"}
+```{r echo = T}
+iris_nstd %>% filter(Species == 'setosa') %>% .$data  # zwraca jednoelementową listę
+```
+
+## Możemy je 'wypakować' za pomocą \[\[x]]: {.top-bottom title-size="medium"}
+```{r echo = T}
+iris_nstd %>% filter(Species == 'setosa') %>% .$data %>% .[[1]] # zwraca ramkę danych
+```
+
+## Tworzymy wykres rozrzutu dla każdego gatunku: {.top-bottom title-size="medium"}
+```{r echo = T}
+iris_nstd %<>%
+    # tworzy wykres rozrzutu dla każdego gatunku
+    mutate(scatter = map2(data, 
+                          Species, 
+                          ~ plot_ly(.x, 
+                                    x = ~ Sepal.Width, 
+                                    y = ~ Sepal.Length, 
+                                    type = 'scatter', 
+                                    mode = 'markers', 
+                                    name = .y) %>% 
+                              config(displayModeBar = F))) 
+```
+
+```{r echo = F}
+iris_nstd
+```
+
+## Pojedyńczy wykres możemy wyświetlić za pomocą: {.top-bottom title-size="medium"}
+```{r echo = T}
+iris_nstd$scatter[[1]]
+```
+
+## A wszystkie wykresy na jednym używając funkcji subplot: {.top-bottom title-size="small"}
+
+```{r echo = T}
+create_annotations <- function(x_val, y_val, label) {
+     list(x = x_val, y = y_val, text = label, showarrow = F, 
+          xref = 'paper', yref = 'paper', font = list(size = 15))
+}
+
+x_vals <- c(.13, .5, .9)
+y_vals <- rep(1.03, 3)
+labels <- as.character(iris_nstd$Species)
+annttns <- pmap(list(x_vals, y_vals, labels), create_annotations) 
+
+scatters_titles <- subplot(iris_nstd$scatter, shareX = T, shareY = T) %>% 
+    # dodaje tytuły do wykresów
+    plotly::layout(showlegend = F,
+                   annotations = annttns)
+
+```
+
+## Wykresy z tytułami: {.top-bottom title-size="medium"}
+
+```{r echo = T}
+scatters_titles
+```
+
+## Szacujemy funkcję liniową dla każdego gatunku: {.top-bottom title-size="medium"}
+
+```{r echo = T, eval = F}
+iris_nstd %<>% 
+    # dopasowuje model liniowy dla każdego gatunku osobno
+    mutate(lm = map(data, 
+                    ~ lm(data = ., 
+                         Sepal.Length ~ Sepal.Width)),
+```
+
+## Szacujemy funkcję liniową dla każdego gatunku: {.top-bottom title-size="medium"}
+
+```{r echo = T, eval = F}
+iris_nstd %<>% 
+    # dopasowuje model liniowy dla każdego gatunku osobno
+    mutate(lm = map(data, 
+                    ~ lm(data = ., 
+                         Sepal.Length ~ Sepal.Width)), 
+           lm_tidy = map(lm, tidy), # zwraca 'uporządkowaną' wersje modelu
+```
+
+## Szacujemy funkcję liniową dla każdego gatunku: {.top-bottom title-size="medium"}
+
+```{r echo = T, eval = F}
+iris_nstd %<>% 
+    # dopasowuje model liniowy dla każdego gatunku osobno
+    mutate(lm = map(data, 
+                    ~ lm(data = ., 
+                         Sepal.Length ~ Sepal.Width)), 
+           lm_tidy = map(lm, tidy), # zwraca 'uporządkowaną' wersje modelu
+           intercept = map_dbl(lm_tidy, ~ .[1, 2]), # tworzy kolumnę z wyrazem wolnym 
+           coeff = map_dbl(lm_tidy, ~ .[2, 2])) # tworzy kolumnę ze współczynnikiem kierunkowym
+
+```
+
+## Szacujemy funkcję liniową dla każdego gatunku: {.top-bottom title-size="medium"}
+
+```{r echo = T, eval = T}
+iris_nstd %<>% 
+    # dopasowuje model liniowy dla każdego gatunku osobno
+    mutate(lm = map(data, 
+                    ~ lm(data = ., 
+                         Sepal.Length ~ Sepal.Width)), 
+           lm_tidy = map(lm, tidy), # zwraca 'uporządkowaną' wersje modelu
+           intercept = map_dbl(lm_tidy, ~ .[1, 2]), # tworzy kolumnę z wyrazem wolnym 
+           coeff = map_dbl(lm_tidy, ~ .[2, 2])) # tworzy kolumnę ze współczynnikiem kierunkowym
+
+iris_nstd %>% select(-data, -scatter)
+```
+
+## Nanosimy oszacowaną funkcję liniowy na wykresy rozrzutu: {.top-bottom title-size="small"}
+```{r echo = T, eval = F}
+# funkcja nanosząca prognozę na wykres rozrzutu
+plot_with_pred <- function(scatter, data, lm, intercept, coeff){
+    scatter %>% 
+        add_trace(x = data$Sepal.Width, 
+                  y = predict(lm, data),
+                  hoverinfo = 'text',
+                  mode = 'line', 
+                  text = paste0('y = ', round(intercept, 2), ' + ', round(coeff, 2), 'x')) %>% 
+        plotly::layout(showlegend = F,
+                       xaxis = list(title = ''))
+}
+```
+
+## Nanosimy oszacowaną funkcję liniowy na wykresy rozrzutu: {.top-bottom title-size="small"}
+```{r echo = T}
+# funkcja nanosząca prognozę na wykres rozrzutu
+plot_with_pred <- function(scatter, data, lm, intercept, coeff){
+    scatter %>% 
+        add_trace(x = data$Sepal.Width, 
+                  y = predict(lm, data),
+                  hoverinfo = 'text',
+                  mode = 'line', 
+                  text = paste0('y = ', round(intercept, 2), ' + ', round(coeff, 2), 'x')) %>% 
+        plotly::layout(showlegend = F,
+                       xaxis = list(title = ''))
+}
+
+iris_nstd %<>%
+    # tworzy kolumnę z wykresami rozrzutu wraz z prognozą
+    mutate(scatter_with_pred = pmap(list(scatter, data, lm, intercept, coeff), plot_with_pred))
+```
+
+## Wykresy z oszacowaną funkcją liniową: {.top-bottom title-size="medium"}
+```{r, echo = F}
+subplot(iris_nstd$scatter_with_pred, shareX = T, shareY = T) %>% plotly::layout(showlegend = F,
+                                                                                annotations = list(
+                                                                                    list(x = 0.13 , y = 1.03, text = iris_nstd$Species[[1]], showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15)),
+                                                                                    list(x = 0.50 , y = 1.03, text = iris_nstd$Species[[2]], showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15)),
+                                                                                    list(x = 0.9 , y = 1.03, text = iris_nstd$Species[[3]], showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15)),
+                                                                                    list(x = 0.5 , y = -0.09, text = 'Sepal.Width', showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15))))
+```
+
+## Podejście to możemy wykorzystać np. do tworzenia heatmap: {.top-bottom title-size="small"}
+```{r, echo = T, eval = F}
+iris_nstd %<>%
+    mutate(data_2 = map(data, function(x) { # funkcja przekształcająca dane w postać macierzową
+        x %>% select(Sepal.Width, Sepal.Length) %>%
+        mutate(Sepal.Width = ceiling(Sepal.Width * 2) / 2, # zaokrągla liczby do 0.5
+               Sepal.Length = ceiling(Sepal.Length * 2) / 2) %>% # zaokrągla liczby do 0.5
+            count(Sepal.Width, Sepal.Length) %>% # liczy wystąpienia każdej kombinacji
+            spread(Sepal.Width, n, fill = 0) # rozprasza dane do postaci macierzowej
+        }),
+```
+
+## Podejście to możemy wykorzystać np. do tworzenia heatmap: {.top-bottom title-size="small"}
+```{r, echo = T, eval = F}
+iris_nstd %<>%
+    mutate(data_2 = map(data, function(x) { # funkcja przekształcająca dane w postać macierzową
+        x %>% select(Sepal.Width, Sepal.Length) %>%
+        mutate(Sepal.Width = ceiling(Sepal.Width * 2) / 2, # zaokrągla liczby do 0.5
+               Sepal.Length = ceiling(Sepal.Length * 2) / 2) %>% # zaokrągla liczby do 0.5
+            count(Sepal.Width, Sepal.Length) %>% # liczy wystąpienia każdej kombinacji
+            spread(Sepal.Width, n, fill = 0) # rozprasza dane do postaci macierzowej
+        }),
+        matrix = map(data_2, as.matrix, dimnames = NULL), # przekształca df w macierz
+```
+
+## Podejście to możemy wykorzystać np. do tworzenia heatmap: {.top-bottom title-size="small"}
+```{r, echo = T, eval = F}
+iris_nstd %<>%
+    mutate(data_2 = map(data, function(x) { # funkcja przekształcająca dane w postać macierzową
+        x %>% select(Sepal.Width, Sepal.Length) %>%
+        mutate(Sepal.Width = ceiling(Sepal.Width * 2) / 2, # zaokrągla liczby do 0.5
+               Sepal.Length = ceiling(Sepal.Length * 2) / 2) %>% # zaokrągla liczby do 0.5
+            count(Sepal.Width, Sepal.Length) %>% # liczy wystąpienia każdej kombinacji
+            spread(Sepal.Width, n, fill = 0) # rozprasza dane do postaci macierzowej
+        }),
+        matrix = map(data_2, as.matrix, dimnames = NULL), # przekształca df w macierz
+        heatmap = map(matrix, # tworzy wykres heatmapy
+                      ~ plot_ly(z = .[, -1],
+                                y = .[, 1],
+                                x = colnames(.)[-1],
+                                type = 'heatmap',
+                                showscale = F,
+                                hoverinfo = 'z',
+                                colors = colorRamp(c("white", "#0087BD"))) %>% 
+                          plotly::layout(xaxis = list(showgrid = F), 
+                                         yaxis = list(showgrid = F))))
+```
+
+## Efektem są takie oto heatmapy: {.top-bottom title-size="medium"}
+```{r, echo = F}
+iris_nstd %<>%
+    mutate(data_2 = map(data, function(x){
+        x %>% select(Sepal.Width, Sepal.Length) %>%
+        mutate(Sepal.Width = ceiling(Sepal.Width * 2) / 2,
+               Sepal.Length = ceiling(Sepal.Length * 2) / 2) %>%
+            count(Sepal.Width, Sepal.Length) %>%
+            spread(Sepal.Width, n, fill = 0)}),
+        matrix = map(data_2, as.matrix, dimnames = NULL),
+        heatmap = map(matrix,
+                      ~ plot_ly(z = .[, -1],
+                                y = .[, 1],
+                                x = colnames(.)[-1],
+                                type = 'heatmap',
+                                showscale = F,
+                                hoverinfo = 'z',
+                                colors = colorRamp(c("white", "#0087BD"))) %>% 
+                          plotly::layout(xaxis = list(showgrid = F),
+                                         yaxis = list(showgrid = F))))
+
+subplot(iris_nstd$heatmap, shareY = T) %>% plotly::layout(showlegend = F,
+                                                    annotations = list(
+                                                        list(x = 0.13 , y = 1.07, text = iris_nstd$Species[[1]], showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15)),
+                                                        list(x = 0.50 , y = 1.07, text = iris_nstd$Species[[2]], showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15)),
+                                                        list(x = 0.9 , y = 1.07, text = iris_nstd$Species[[3]], showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15)),
+                                                        list(x = 0.5 , y = -0.09, text = 'Sepal.Width', showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15)),
+                                                        list(x = -0.08 , y = .5, text = "Sepal.Length",
+                                                             showarrow = F, xref = 'paper', yref = 'paper', font = list(size = 15, family = 'Open Sans'), textangle = 270))) %>% 
+    config(displayModeBar = F)
+```
+
+## Korzyści ze stosowania purrra:
+- przetrzymujemy wszystko w jednej ramce danych - łatwiej rozeznać się co zostało już zrobione i znaleźć to czego potrzebujemy
+- kod jest bardziej zwięzły, bez powtórzeń
+
+## {pic=final}
