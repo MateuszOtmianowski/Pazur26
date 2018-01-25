@@ -250,7 +250,7 @@ identical(res1_loop, unname(res1_fp)) & identical(res2_loop, unname(res2_fp))
 
 <br>
 
-- Podstawową funkcją pakietu jest funkcja map(.x, .f, ...), która gdy .x jest wektorem lub listą wykona funkcję .f dla każdego ich elementu, a przypadku ramki danych dla wykona fukcję .f dla każdej kolumny.
+- Podstawową funkcją pakietu jest funkcja map(.x, .f, ...), która gdy .x jest wektorem lub listą wykona funkcję .f dla każdego ich elementu, a przypadku ramki danych wykona funkcję .f dla każdej kolumny.
 - Czasami przydaje się alternatywna składnia map(.x, .f = ~ ZRÓB COŚ Z .x)
 
 ## Funkcja map zwraca listę, aby otrzymać wynik w innym formacie możemy wykorzystać inne jej warianty:
@@ -281,7 +281,7 @@ class(map_dbl(l, mean))
 identical(unlist(map(l, mean)), map_dbl(l, mean))
 ```
 
-## Przykłady użycia map {.top-bottom title-size="small"}
+## Przykłady użycia map 
 ```{r echo = T}
 set.seed(1)
 # lista dwóch wektorów
@@ -289,7 +289,7 @@ v <- list(c(NA, rnorm(99, 10, 5)), # NA na początku wektora
           rnorm(100, 10, 5)) 
 ```
 
-## Przykłady użycia map {.top-bottom title-size="small"}
+## Przykłady użycia map 
 ```{r echo = T}
 set.seed(1)
 # lista dwóch wektorów
@@ -299,7 +299,7 @@ v <- list(c(NA, rnorm(99, 10, 5)), # NA na początku wektora
 map_dbl(v, mean) # liczymy średnią dla każdego wektora
 ```
 
-## Przykłady użycia map {.top-bottom title-size="small"}
+## Przykłady użycia map 
 ```{r echo = T}
 set.seed(1)
 # lista dwóch wektorów
@@ -310,13 +310,18 @@ map_dbl(v, mean) # liczymy średnią dla każdego wektora
 map_dbl(v, mean, na.rm = T) # dodatkowy argument do średniej, żeby pomijać NA
 ```
 
-## Przykłady użycia map, alternatywny zapis {.top-bottom title-size="small"}
+## Przykłady użycia map, alternatywny zapis
+```{r echo = T}
+map_dbl(v, mean, na.rm = T) 
+```
+
+## Przykłady użycia map, alternatywny zapis
 ```{r echo = T}
 map_dbl(v, mean, na.rm = T) 
 map_dbl(v, ~ mean(., na.rm = T)) # z użyciem ~, . oznacza miejsce, gdzie chcemy umieścić argument
 ```
 
-## Przykłady użycia map, alternatywny zapis {.top-bottom title-size="small"}
+## Przykłady użycia map, alternatywny zapis
 ```{r echo = T}
 map_dbl(v, mean, na.rm = T) 
 map_dbl(v, ~ mean(., na.rm = T)) # z użyciem ~, . oznacza miejsce, gdzie chcemy umieścić argument
@@ -334,7 +339,6 @@ map_dbl(v, sqrt)
 ## Użyteczność map widać przede wszystkim w przypadku list
 ```{r echo = T}
 l <- as.list(v)
-
 ```
 
 ## Użyteczność map widać przede wszystkim w przypadku list
@@ -368,11 +372,11 @@ head(map(l, sqrt_safe), n = 2)
 ```
 
 ## map + safely
-- map(.x, 'nazwa') wywołuje z każdej listy komponent 'nazwa'
+- map(.x, 'nazwa') z każdej listy wywołuje element 'nazwa'
 ```{r echo = T}
 map(l, sqrt_safe) %>% map_dbl('result')
 ```
-- map(.x, n) wywołuje z każdej listy komponent o numerze n
+- map(.x, n) z każdej listy wywołuje n-ty element 
 ```{r echo = T}
 map(l, sqrt_safe) %>% map_dbl(1) # wyniki
 ```
@@ -395,15 +399,22 @@ head(list_of_lists[1])
 ```{r echo = T}
 res_sqrt <- map(list_of_lists, ~ map(., sqrt)) 
 ```
+Jak to działa?
+
+Zewnętrzny map iteruje po listach i przekazuje każdą z nich do drugiej funkcji map, która z kolei iteruje po elementach tej listy. <br>
+Rezultatem jest taka oto sekwencja:
+
+- map(list_of_lists[[1]], sqrt)
+- map(list_of_lists[[2]], sqrt)
+- map(list_of_lists[[3]], sqrt)
+
 
 ## Użyteczność map widać przede wszystkim w przypadku list, zwłaszcza zagnieżdżonych
 ```{r}
 head(res_sqrt, 1)
 ```
 
-## map2 i pmap umożliwiają iteracje po dwóch lub więcej wektorach/listach jednocześnie {.top-bottom title-size="medium"}
-
-<br>
+## map2 i pmap umożliwiają iteracje po dwóch lub więcej wektorach/listach jednocześnie 
 
 - map2( .x, .y, .f, ...) po dwóch wektorach/listach,
 - pmap( .l , .f , ...) po dwóch i więcej wektorach/listach, gdzie .l jest listą wektorów/list;
@@ -631,6 +642,12 @@ iris_nstd$scatter[[1]]
 ## A wszystkie wykresy na jednym używając funkcji subplot: {.top-bottom title-size="small"}
 
 ```{r echo = T}
+(scatters <- subplot(iris_nstd$scatter, shareX = T, shareY = T))
+```
+
+## Dodajemy tytuły do wykresów:
+
+```{r echo = T}
 create_annotations <- function(x_val, y_val, label) {
      list(x = x_val, y = y_val, text = label, showarrow = F, 
           xref = 'paper', yref = 'paper', font = list(size = 15))
@@ -641,17 +658,16 @@ y_vals <- rep(1.03, 3)
 labels <- as.character(iris_nstd$Species)
 annttns <- pmap(list(x_vals, y_vals, labels), create_annotations) 
 
-scatters_titles <- subplot(iris_nstd$scatter, shareX = T, shareY = T) %>% 
+scatters %<>% 
     # dodaje tytuły do wykresów
     plotly::layout(showlegend = F,
                    annotations = annttns)
-
 ```
 
 ## Wykresy z tytułami: {.top-bottom title-size="medium"}
 
 ```{r echo = T}
-scatters_titles
+scatters
 ```
 
 ## Szacujemy funkcję liniową dla każdego gatunku: {.top-bottom title-size="medium"}
@@ -704,7 +720,7 @@ iris_nstd %<>%
 iris_nstd %>% select(-data, -scatter)
 ```
 
-## Nanosimy oszacowaną funkcję liniowy na wykresy rozrzutu: {.top-bottom title-size="small"}
+## Nanosimy oszacowaną funkcję liniową na wykresy rozrzutu: {.top-bottom title-size="small"}
 ```{r echo = T, eval = F}
 # funkcja nanosząca prognozę na wykres rozrzutu
 plot_with_pred <- function(scatter, data, lm, intercept, coeff){
@@ -830,6 +846,6 @@ subplot(iris_nstd$heatmap, shareY = T) %>% plotly::layout(showlegend = F,
 
 ## Korzyści ze stosowania purrra:
 - przetrzymujemy wszystko w jednej ramce danych - łatwiej rozeznać się co zostało już zrobione i znaleźć to czego potrzebujemy
-- kod jest bardziej zwięzły, bez powtórzeń
+- kod jest bardziej zwięzły, bez powtórzeń (mniej błedów wynikających np. z kopiowania kodu)
 
 ## {pic=final}

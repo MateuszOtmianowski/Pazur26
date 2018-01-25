@@ -5606,7 +5606,7 @@ fun_list$avg(nums)</pre>
 
 <pre >## [1] 4.958475</pre>
 
-</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  title-size="medium" id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>fun_generator &lt;- function(operation){
     if (operation == &#39;multiply&#39;) return(function(x, y) x * y)
@@ -5614,7 +5614,7 @@ fun_list$avg(nums)</pre>
     else return(function(x, y) &#39;Unknown operation&#39;)
 }</pre>
 
-</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji-1" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  title-size="medium" id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji-1" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>fun_generator &lt;- function(operation){
     if (operation == &#39;multiply&#39;) return(function(x, y) x * y)
@@ -5625,7 +5625,7 @@ fun_generator(&#39;multiply&#39;)(8, 2)</pre>
 
 <pre >## [1] 16</pre>
 
-</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji-2" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  title-size="medium" id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji-2" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>fun_generator &lt;- function(operation){
     if (operation == &#39;multiply&#39;) return(function(x, y) x * y)
@@ -5640,7 +5640,7 @@ fun_generator(&#39;multiply&#39;)(8, 2)</pre>
 
 <pre >## [1] 10</pre>
 
-</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji-3" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Funkcje możemy zwracać jako wynik innej funkcji</h2></hgroup><article  title-size="medium" id="funkcje-mozemy-zwracac-jako-wynik-innej-funkcji-3" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>fun_generator &lt;- function(operation){
     if (operation == &#39;multiply&#39;) return(function(x, y) x * y)
@@ -5718,7 +5718,7 @@ for (i in seq_along(iris[, -5])) {
 
 <p>Pętle <em>for</em> podkreślają obiekty i mechanizm implementacji, natomiast ukrywają funkcje.</p>
 
-</article></slide><slide class=''><hgroup><h2>W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako:</h2></hgroup><article  id="w-programowaniu-funkcyjnym-skupiamy-sie-na-funkcjach.-petle-z-poprzednich-slajdow-mozemy-tez-napisac-jako" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako:</h2></hgroup><article  title-size="small" id="w-programowaniu-funkcyjnym-skupiamy-sie-na-funkcjach.-petle-z-poprzednich-slajdow-mozemy-tez-napisac-jako" class="top-bottom">
 
 <p><br></p>
 
@@ -5727,7 +5727,7 @@ for (i in seq_along(iris[, -5])) {
 res1_fp &lt;- map_dbl(iris[, -5], mean)
 res2_fp &lt;- map_dbl(iris[, -5], median)</pre>
 
-</article></slide><slide class=''><hgroup><h2>W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako:</h2></hgroup><article  id="w-programowaniu-funkcyjnym-skupiamy-sie-na-funkcjach.-petle-z-poprzednich-slajdow-mozemy-tez-napisac-jako-1" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako:</h2></hgroup><article  title-size="small" id="w-programowaniu-funkcyjnym-skupiamy-sie-na-funkcjach.-petle-z-poprzednich-slajdow-mozemy-tez-napisac-jako-1" class="top-bottom">
 
 <p><br></p>
 
@@ -5741,7 +5741,7 @@ res1_fp</pre>
 <pre >## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
 ##     5.843333     3.057333     3.758000     1.199333</pre>
 
-</article></slide><slide class=''><hgroup><h2>W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako:</h2></hgroup><article  id="w-programowaniu-funkcyjnym-skupiamy-sie-na-funkcjach.-petle-z-poprzednich-slajdow-mozemy-tez-napisac-jako-2" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>W programowaniu funkcyjnym skupiamy się na funkcjach. Pętle z poprzednich slajdów możemy też napisać jako:</h2></hgroup><article  title-size="small" id="w-programowaniu-funkcyjnym-skupiamy-sie-na-funkcjach.-petle-z-poprzednich-slajdow-mozemy-tez-napisac-jako-2" class="top-bottom">
 
 <p><br></p>
 
@@ -5759,12 +5759,12 @@ res1_fp</pre>
 
 <pre >## [1] TRUE</pre>
 
-</article></slide><slide class=''><hgroup><h2>Celem pakietu purrr jest uproszczenie tworzenie pętli</h2></hgroup><article  id="celem-pakietu-purrr-jest-uproszczenie-tworzenie-petli" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Celem pakietu purrr jest uproszczenie tworzenie pętli</h2></hgroup><article  title-size="medium" id="celem-pakietu-purrr-jest-uproszczenie-tworzenie-petli" class="top-bottom">
 
 <p><br></p>
 
 <ul>
-<li>Podstawową funkcją pakietu jest funkcja map(.x, .f, …), która gdy .x jest wektorem lub listą wykona funkcję .f dla każdego ich elementu, a przypadku ramki danych dla wykona fukcję .f dla każdej kolumny.</li>
+<li>Podstawową funkcją pakietu jest funkcja map(.x, .f, …), która gdy .x jest wektorem lub listą wykona funkcję .f dla każdego ich elementu, a przypadku ramki danych wykona funkcję .f dla każdej kolumny.</li>
 <li>Czasami przydaje się alternatywna składnia map(.x, .f = ~ ZRÓB COŚ Z .x)</li>
 </ul>
 
@@ -5810,14 +5810,14 @@ class(map(l, mean))</pre>
 
 <pre >## [1] TRUE</pre>
 
-</article></slide><slide class=''><hgroup><h2>Przykłady użycia map</h2></hgroup><article  id="przykady-uzycia-map" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Przykłady użycia map</h2></hgroup><article  id="przykady-uzycia-map">
 
 <pre class = 'prettyprint lang-r'>set.seed(1)
 # lista dwóch wektorów
 v &lt;- list(c(NA, rnorm(99, 10, 5)), # NA na początku wektora
           rnorm(100, 10, 5)) </pre>
 
-</article></slide><slide class=''><hgroup><h2>Przykłady użycia map</h2></hgroup><article  id="przykady-uzycia-map-1" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Przykłady użycia map</h2></hgroup><article  id="przykady-uzycia-map-1">
 
 <pre class = 'prettyprint lang-r'>set.seed(1)
 # lista dwóch wektorów
@@ -5828,7 +5828,7 @@ map_dbl(v, mean) # liczymy średnią dla każdego wektora</pre>
 
 <pre >## [1]       NA 9.806343</pre>
 
-</article></slide><slide class=''><hgroup><h2>Przykłady użycia map</h2></hgroup><article  id="przykady-uzycia-map-2" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Przykłady użycia map</h2></hgroup><article  id="przykady-uzycia-map-2">
 
 <pre class = 'prettyprint lang-r'>set.seed(1)
 # lista dwóch wektorów
@@ -5843,7 +5843,13 @@ map_dbl(v, mean) # liczymy średnią dla każdego wektora</pre>
 
 <pre >## [1] 10.573845  9.806343</pre>
 
-</article></slide><slide class=''><hgroup><h2>Przykłady użycia map, alternatywny zapis</h2></hgroup><article  id="przykady-uzycia-map-alternatywny-zapis" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Przykłady użycia map, alternatywny zapis</h2></hgroup><article  id="przykady-uzycia-map-alternatywny-zapis">
+
+<pre class = 'prettyprint lang-r'>map_dbl(v, mean, na.rm = T) </pre>
+
+<pre >## [1] 10.573845  9.806343</pre>
+
+</article></slide><slide class=''><hgroup><h2>Przykłady użycia map, alternatywny zapis</h2></hgroup><article  id="przykady-uzycia-map-alternatywny-zapis-1">
 
 <pre class = 'prettyprint lang-r'>map_dbl(v, mean, na.rm = T) </pre>
 
@@ -5853,7 +5859,7 @@ map_dbl(v, mean) # liczymy średnią dla każdego wektora</pre>
 
 <pre >## [1] 10.573845  9.806343</pre>
 
-</article></slide><slide class=''><hgroup><h2>Przykłady użycia map, alternatywny zapis</h2></hgroup><article  id="przykady-uzycia-map-alternatywny-zapis-1" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Przykłady użycia map, alternatywny zapis</h2></hgroup><article  id="przykady-uzycia-map-alternatywny-zapis-2">
 
 <pre class = 'prettyprint lang-r'>map_dbl(v, mean, na.rm = T) </pre>
 
@@ -5941,7 +5947,7 @@ sqrt_safe(l)</pre>
 </article></slide><slide class=''><hgroup><h2>map + safely</h2></hgroup><article  id="map-safely-1">
 
 <ul>
-<li>map(.x, "nazwa") wywołuje z każdej listy komponent "nazwa"</li>
+<li>map(.x, "nazwa") z każdej listy wywołuje element "nazwa"</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>map(l, sqrt_safe) %&gt;% map_dbl(&#39;result&#39;)</pre>
@@ -5949,7 +5955,7 @@ sqrt_safe(l)</pre>
 <pre >## [1] 2 3 5</pre>
 
 <ul>
-<li>map(.x, n) wywołuje z każdej listy komponent o numerze n</li>
+<li>map(.x, n) z każdej listy wywołuje n-ty element</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>map(l, sqrt_safe) %&gt;% map_dbl(1) # wyniki</pre>
@@ -5986,6 +5992,16 @@ list_of_lists &lt;- list(l1, l2, l3)</pre>
 
 <pre class = 'prettyprint lang-r'>res_sqrt &lt;- map(list_of_lists, ~ map(., sqrt)) </pre>
 
+<p>Jak to działa?</p>
+
+<p>Zewnętrzny map iteruje po listach i przekazuje każdą z nich do drugiej funkcji map, która z kolei iteruje po elementach tej listy. <br> Rezultatem jest taka oto sekwencja:</p>
+
+<ul>
+<li>map(list_of_lists[[1]], sqrt)</li>
+<li>map(list_of_lists[[2]], sqrt)</li>
+<li>map(list_of_lists[[3]], sqrt)</li>
+</ul>
+
 </article></slide><slide class=''><hgroup><h2>Użyteczność map widać przede wszystkim w przypadku list, zwłaszcza zagnieżdżonych</h2></hgroup><article  id="uzytecznosc-map-widac-przede-wszystkim-w-przypadku-list-zwaszcza-zagniezdzonych-3">
 
 <pre >## [[1]]
@@ -6004,9 +6020,7 @@ list_of_lists &lt;- list(l1, l2, l3)</pre>
 ## [[1]][[5]]
 ## [1] 6</pre>
 
-</article></slide><slide class=''><hgroup><h2>map2 i pmap umożliwiają iteracje po dwóch lub więcej wektorach/listach jednocześnie</h2></hgroup><article  id="map2-i-pmap-umozliwiaja-iteracje-po-dwoch-lub-wiecej-wektorachlistach-jednoczesnie" class="top-bottom" title-size="medium">
-
-<p><br></p>
+</article></slide><slide class=''><hgroup><h2>map2 i pmap umożliwiają iteracje po dwóch lub więcej wektorach/listach jednocześnie</h2></hgroup><article  id="map2-i-pmap-umozliwiaja-iteracje-po-dwoch-lub-wiecej-wektorachlistach-jednoczesnie">
 
 <ul>
 <li>map2( .x, .y, .f, …) po dwóch wektorach/listach,</li>
@@ -6019,12 +6033,12 @@ list_of_lists &lt;- list(l1, l2, l3)</pre>
 </ul></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  title-size="medium" id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>output1 &lt;- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
                 df2 = data.frame(c = rnorm(5), d = rnorm(5))) # 5 wierszy, 2 kolumny</pre>
 
-</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-1" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  title-size="medium" id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-1" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>output1 &lt;- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
                 df2 = data.frame(c = rnorm(5), d = rnorm(5))) # 5 wierszy, 2 kolumny
@@ -6032,7 +6046,7 @@ list_of_lists &lt;- list(l1, l2, l3)</pre>
 output2 &lt;- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
                 df2 = data.frame(c = rnorm(10), d = rnorm(10))) # 10 wierszy (różnica!), 2 kolumny </pre>
 
-</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-2" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  title-size="medium" id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-2" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>output1 &lt;- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), # 10 wierszy, 2 kolumny
                 df2 = data.frame(c = rnorm(5), d = rnorm(5))) # 5 wierszy, 2 kolumny
@@ -6045,7 +6059,7 @@ map2_lgl(output1, output2, identical)</pre>
 <pre >##   df1   df2 
 ## FALSE FALSE</pre>
 
-</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-3" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  title-size="medium" id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-3" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>set.seed(2); output1 &lt;- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), 
                              df2 = data.frame(c = rnorm(5), d = rnorm(5)))
@@ -6058,7 +6072,7 @@ map2_lgl(output1, output2, identical)</pre>
 <pre >##   df1   df2 
 ##  TRUE FALSE</pre>
 
-</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-4" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  title-size="medium" id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-4" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>set.seed(2); output1 &lt;- list(df1 = data.frame(a = rnorm(10), b = rnorm(10)), 
                              df2 = data.frame(c = rnorm(5), d = rnorm(5)))
@@ -6076,7 +6090,7 @@ map2_lgl(output1, output2, identical)</pre>
 <pre >##   df1   df2 
 ##  TRUE FALSE</pre>
 
-</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-5" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykorzystanie map2() do sprawdzenia czy ramki danych w liście są takie same</h2></hgroup><article  title-size="medium" id="wykorzystanie-map2-do-sprawdzenia-czy-ramki-danych-w-liscie-sa-takie-same-5" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>map2_lgl(output1, output2, identical)</pre>
 
@@ -6106,12 +6120,12 @@ output_comp</pre>
 ```
 -->
 
-</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  id="invoke_map-map-z-lista-funkcji" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  title-size="medium" id="invoke_map-map-z-lista-funkcji" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>set.seed(2); k &lt;- rnorm(100, 10, 5)
 fun_list &lt;- list(max = max, median  = median, min = min)</pre>
 
-</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  id="invoke_map-map-z-lista-funkcji-1" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  title-size="medium" id="invoke_map-map-z-lista-funkcji-1" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>set.seed(2); k &lt;- rnorm(100, 10, 5)
 fun_list &lt;- list(max = max, median  = median, min = min)
@@ -6121,7 +6135,7 @@ map_dbl(fun_list, function(f) f(k))</pre>
 <pre >##       max    median       min 
 ## 20.454096  9.298880 -2.258532</pre>
 
-</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  id="invoke_map-map-z-lista-funkcji-2" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  title-size="medium" id="invoke_map-map-z-lista-funkcji-2" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>set.seed(2); k &lt;- rnorm(100, 10, 5)
 fun_list &lt;- list(max = max, median  = median, min = min)
@@ -6136,7 +6150,7 @@ map_dbl(fun_list, function(f) f(k))</pre>
 <pre >##       max    median       min 
 ## 20.454096  9.298880 -2.258532</pre>
 
-</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  id="invoke_map-map-z-lista-funkcji-3" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>invoke_map() = map() z listą funkcji</h2></hgroup><article  title-size="medium" id="invoke_map-map-z-lista-funkcji-3" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>set.seed(2); k &lt;- rnorm(100, 10, 5)
 fun_list &lt;- list(max = max, median  = median, min = min)
@@ -6155,7 +6169,7 @@ map_dbl(fun_list, function(f) f(k))</pre>
 
 <pre >## [1] TRUE</pre>
 
-</article></slide><slide class=''><hgroup><h2>Zastosowanie listy funkcji do kolumn w ramce danych</h2></hgroup><article  id="zastosowanie-listy-funkcji-do-kolumn-w-ramce-danych" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Zastosowanie listy funkcji do kolumn w ramce danych</h2></hgroup><article  title-size="medium" id="zastosowanie-listy-funkcji-do-kolumn-w-ramce-danych" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>library(magrittr)
 
@@ -6175,7 +6189,7 @@ head(res_purrr, 6)</pre>
 ## 5  Sepal.Width.median        3.0
 ## 6     Sepal.Width.min        2.0</pre>
 
-</article></slide><slide class=''><hgroup><h2>Zastosowanie listy funkcji do kolumn w ramce danych</h2></hgroup><article  id="zastosowanie-listy-funkcji-do-kolumn-w-ramce-danych-1" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Zastosowanie listy funkcji do kolumn w ramce danych</h2></hgroup><article  title-size="medium" id="zastosowanie-listy-funkcji-do-kolumn-w-ramce-danych-1" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>library(dplyr)
 
@@ -6196,14 +6210,14 @@ res_dplyr %&gt;%
 ## 2  Sepal.Width.max        4.4        4.4
 ## 3 Petal.Length.max        6.9        6.9</pre>
 
-</article></slide><slide class=''><hgroup><h2>purrr oferuje podbną funkcjonalność do funkcji z rodziny apply, jednak jest bardziej spójny i przewidywalny</h2></hgroup><article  id="purrr-oferuje-podbna-funkcjonalnosc-do-funkcji-z-rodziny-apply-jednak-jest-bardziej-spojny-i-przewidywalny" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>purrr oferuje podbną funkcjonalność do funkcji z rodziny apply, jednak jest bardziej spójny i przewidywalny</h2></hgroup><article  title-size="small" id="purrr-oferuje-podbna-funkcjonalnosc-do-funkcji-z-rodziny-apply-jednak-jest-bardziej-spojny-i-przewidywalny" class="top-bottom">
 
 <div id="htmlwidget-dba59af860d13a34313d" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-dba59af860d13a34313d">{"x":{"filter":"none","data":[["1","2","3"],["Pierwszy argument             ","Dodatkowe argumenty do funkcji","Przewidywalność klasy wyniku  "],["Dane                             ","Podajemy po nazwie funkcji       ","Można przewidzieć z nazwy funkcji"],["<i>lapply()<\/i> dane, <i>mapply()<\/i> funkcja          ","Dla większości funkcji \"...\", <i>mapply()<\/i> More.Args","Tylko dla <i>vapply()<\/i>                              "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Kategoria<\/th>\n      <th>purrr<\/th>\n      <th>apply<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","ordering":false,"columnDefs":[{"targets":0,"className":"dt-center","width":"10%"},{"targets":[1,2,3],"className":"dt-left","width":"30%"},{"orderable":false,"targets":0}],"rownames":false,"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
-</article></slide><slide class=''><hgroup><h2>purrr + data.frame</h2></hgroup><article  id="purrr-data.frame" pic="divider_grue">
+</article></slide><slide class=''><hgroup><h2>purrr + data.frame</h2></hgroup><article  pic="divider_grue" id="purrr-data.frame">
 
-</article></slide><slide class=''><hgroup><h2>Zagnieżdżamy dane według gatunku:</h2></hgroup><article  id="zagniezdzamy-dane-wedug-gatunku" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Zagnieżdżamy dane według gatunku:</h2></hgroup><article  title-size="medium" id="zagniezdzamy-dane-wedug-gatunku" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>library(magrittr)
 library(broom)
@@ -6223,7 +6237,7 @@ iris_nstd &lt;- iris %&gt;%
 ## 2 versicolor &lt;tibble [50 x 4]&gt;
 ## 3  virginica &lt;tibble [50 x 4]&gt;</pre>
 
-</article></slide><slide class=''><hgroup><h2>Dane w kolumnie "data" przechowywane są jako lista:</h2></hgroup><article  id="dane-w-kolumnie-data-przechowywane-sa-jako-lista" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Dane w kolumnie "data" przechowywane są jako lista:</h2></hgroup><article  title-size="medium" id="dane-w-kolumnie-data-przechowywane-sa-jako-lista" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&gt;% filter(Species == &#39;setosa&#39;) %&gt;% .$data  # zwraca jednoelementową listę</pre>
 
@@ -6243,7 +6257,7 @@ iris_nstd &lt;- iris %&gt;%
 ## 10          4.9         3.1          1.5         0.1
 ## # ... with 40 more rows</pre>
 
-</article></slide><slide class=''><hgroup><h2>Możemy je "wypakować" za pomocą [[x]]:</h2></hgroup><article  id="mozemy-je-wypakowac-za-pomoca-x" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Możemy je "wypakować" za pomocą [[x]]:</h2></hgroup><article  title-size="medium" id="mozemy-je-wypakowac-za-pomoca-x" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&gt;% filter(Species == &#39;setosa&#39;) %&gt;% .$data %&gt;% .[[1]] # zwraca ramkę danych</pre>
 
@@ -6262,7 +6276,7 @@ iris_nstd &lt;- iris %&gt;%
 ## 10          4.9         3.1          1.5         0.1
 ## # ... with 40 more rows</pre>
 
-</article></slide><slide class=''><hgroup><h2>Tworzymy wykres rozrzutu dla każdego gatunku:</h2></hgroup><article  id="tworzymy-wykres-rozrzutu-dla-kazdego-gatunku" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Tworzymy wykres rozrzutu dla każdego gatunku:</h2></hgroup><article  title-size="medium" id="tworzymy-wykres-rozrzutu-dla-kazdego-gatunku" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;%
     # tworzy wykres rozrzutu dla każdego gatunku
@@ -6283,14 +6297,21 @@ iris_nstd &lt;- iris %&gt;%
 ## 2 versicolor &lt;tibble [50 x 4]&gt; &lt;S3: plotly&gt;
 ## 3  virginica &lt;tibble [50 x 4]&gt; &lt;S3: plotly&gt;</pre>
 
-</article></slide><slide class=''><hgroup><h2>Pojedyńczy wykres możemy wyświetlić za pomocą:</h2></hgroup><article  id="pojedynczy-wykres-mozemy-wyswietlic-za-pomoca" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Pojedyńczy wykres możemy wyświetlić za pomocą:</h2></hgroup><article  title-size="medium" id="pojedynczy-wykres-mozemy-wyswietlic-za-pomoca" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd$scatter[[1]]</pre>
 
 <div id="htmlwidget-fa86d3abfa0e56035c35" style="width:840px;height:522px;" class="plotly html-widget"></div>
 <script type="application/json" data-for="htmlwidget-fa86d3abfa0e56035c35">{"x":{"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"title":"Sepal.Width"},"yaxis":{"domain":[0,1],"title":"Sepal.Length"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"data":[{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"mode":"markers","name":"setosa","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(31,119,180,1)","line":{"color":"transparent"}},"xaxis":"x","yaxis":"y"}],"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
 
-</article></slide><slide class=''><hgroup><h2>A wszystkie wykresy na jednym używając funkcji subplot:</h2></hgroup><article  id="a-wszystkie-wykresy-na-jednym-uzywajac-funkcji-subplot" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>A wszystkie wykresy na jednym używając funkcji subplot:</h2></hgroup><article  title-size="small" id="a-wszystkie-wykresy-na-jednym-uzywajac-funkcji-subplot" class="top-bottom">
+
+<pre class = 'prettyprint lang-r'>(scatters &lt;- subplot(iris_nstd$scatter, shareX = T, shareY = T))</pre>
+
+<div id="htmlwidget-26ef667caedae979b6d4" style="width:840px;height:522px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-26ef667caedae979b6d4">{"x":{"data":[{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"mode":"markers","name":"setosa","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(31,119,180,1)","line":{"color":"transparent"}},"xaxis":"x","yaxis":"y"},{"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"y":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"mode":"markers","name":"versicolor","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(255,127,14,1)","line":{"color":"transparent"}},"xaxis":"x2","yaxis":"y"},{"x":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"mode":"markers","name":"virginica","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(44,160,44,1)","line":{"color":"transparent"}},"xaxis":"x3","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,0.313333333333333],"title":"Sepal.Width","anchor":"y"},"xaxis2":{"domain":[0.353333333333333,0.646666666666667],"title":"Sepal.Width","anchor":"y"},"xaxis3":{"domain":[0.686666666666667,1],"title":"Sepal.Width","anchor":"y"},"yaxis":{"domain":[0,1],"title":"Sepal.Length","anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest"},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"source":"A","subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+
+</article></slide><slide class=''><hgroup><h2>Dodajemy tytuły do wykresów:</h2></hgroup><article  id="dodajemy-tytuy-do-wykresow">
 
 <pre class = 'prettyprint lang-r'>create_annotations &lt;- function(x_val, y_val, label) {
      list(x = x_val, y = y_val, text = label, showarrow = F, 
@@ -6302,19 +6323,19 @@ y_vals &lt;- rep(1.03, 3)
 labels &lt;- as.character(iris_nstd$Species)
 annttns &lt;- pmap(list(x_vals, y_vals, labels), create_annotations) 
 
-scatters_titles &lt;- subplot(iris_nstd$scatter, shareX = T, shareY = T) %&gt;% 
+scatters %&lt;&gt;% 
     # dodaje tytuły do wykresów
     plotly::layout(showlegend = F,
                    annotations = annttns)</pre>
 
-</article></slide><slide class=''><hgroup><h2>Wykresy z tytułami:</h2></hgroup><article  id="wykresy-z-tytuami" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykresy z tytułami:</h2></hgroup><article  title-size="medium" id="wykresy-z-tytuami" class="top-bottom">
 
-<pre class = 'prettyprint lang-r'>scatters_titles</pre>
+<pre class = 'prettyprint lang-r'>scatters</pre>
 
-<div id="htmlwidget-26ef667caedae979b6d4" style="width:840px;height:522px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-26ef667caedae979b6d4">{"x":{"data":[{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"mode":"markers","name":"setosa","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(31,119,180,1)","line":{"color":"transparent"}},"xaxis":"x","yaxis":"y"},{"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"y":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"mode":"markers","name":"versicolor","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(255,127,14,1)","line":{"color":"transparent"}},"xaxis":"x2","yaxis":"y"},{"x":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"mode":"markers","name":"virginica","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(44,160,44,1)","line":{"color":"transparent"}},"xaxis":"x3","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,0.313333333333333],"title":"Sepal.Width","anchor":"y"},"xaxis2":{"domain":[0.353333333333333,0.646666666666667],"title":"Sepal.Width","anchor":"y"},"xaxis3":{"domain":[0.686666666666667,1],"title":"Sepal.Width","anchor":"y"},"yaxis":{"domain":[0,1],"title":"Sepal.Length","anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false,"annotations":[{"x":0.13,"y":1.03,"text":"setosa","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":1.03,"text":"versicolor","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.9,"y":1.03,"text":"virginica","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}}]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"source":"A","subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+<div id="htmlwidget-ad56e487df428a373779" style="width:840px;height:522px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ad56e487df428a373779">{"x":{"data":[{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"mode":"markers","name":"setosa","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(31,119,180,1)","line":{"color":"transparent"}},"xaxis":"x","yaxis":"y"},{"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"y":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"mode":"markers","name":"versicolor","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(255,127,14,1)","line":{"color":"transparent"}},"xaxis":"x2","yaxis":"y"},{"x":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"mode":"markers","name":"virginica","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(44,160,44,1)","line":{"color":"transparent"}},"xaxis":"x3","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,0.313333333333333],"title":"Sepal.Width","anchor":"y"},"xaxis2":{"domain":[0.353333333333333,0.646666666666667],"title":"Sepal.Width","anchor":"y"},"xaxis3":{"domain":[0.686666666666667,1],"title":"Sepal.Width","anchor":"y"},"yaxis":{"domain":[0,1],"title":"Sepal.Length","anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false,"annotations":[{"x":0.13,"y":1.03,"text":"setosa","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":1.03,"text":"versicolor","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.9,"y":1.03,"text":"virginica","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}}]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"source":"A","subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
 
-</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  title-size="medium" id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;% 
     # dopasowuje model liniowy dla każdego gatunku osobno
@@ -6322,7 +6343,7 @@ scatters_titles &lt;- subplot(iris_nstd$scatter, shareX = T, shareY = T) %&gt;%
                     ~ lm(data = ., 
                          Sepal.Length ~ Sepal.Width)),</pre>
 
-</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku-1" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  title-size="medium" id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku-1" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;% 
     # dopasowuje model liniowy dla każdego gatunku osobno
@@ -6331,7 +6352,7 @@ scatters_titles &lt;- subplot(iris_nstd$scatter, shareX = T, shareY = T) %&gt;%
                          Sepal.Length ~ Sepal.Width)), 
            lm_tidy = map(lm, tidy), # zwraca &#39;uporządkowaną&#39; wersje modelu</pre>
 
-</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku-2" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  title-size="medium" id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku-2" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;% 
     # dopasowuje model liniowy dla każdego gatunku osobno
@@ -6342,7 +6363,7 @@ scatters_titles &lt;- subplot(iris_nstd$scatter, shareX = T, shareY = T) %&gt;%
            intercept = map_dbl(lm_tidy, ~ .[1, 2]), # tworzy kolumnę z wyrazem wolnym 
            coeff = map_dbl(lm_tidy, ~ .[2, 2])) # tworzy kolumnę ze współczynnikiem kierunkowym</pre>
 
-</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku-3" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Szacujemy funkcję liniową dla każdego gatunku:</h2></hgroup><article  title-size="medium" id="szacujemy-funkcje-liniowa-dla-kazdego-gatunku-3" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;% 
     # dopasowuje model liniowy dla każdego gatunku osobno
@@ -6362,7 +6383,7 @@ iris_nstd %&gt;% select(-data, -scatter)</pre>
 ## 2 versicolor &lt;S3: lm&gt; &lt;data.frame [2 x 5]&gt;  3.539735 0.8650777
 ## 3  virginica &lt;S3: lm&gt; &lt;data.frame [2 x 5]&gt;  3.906836 0.9015345</pre>
 
-</article></slide><slide class=''><hgroup><h2>Nanosimy oszacowaną funkcję liniowy na wykresy rozrzutu:</h2></hgroup><article  id="nanosimy-oszacowana-funkcje-liniowy-na-wykresy-rozrzutu" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Nanosimy oszacowaną funkcję liniową na wykresy rozrzutu:</h2></hgroup><article  title-size="small" id="nanosimy-oszacowana-funkcje-liniowa-na-wykresy-rozrzutu" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'># funkcja nanosząca prognozę na wykres rozrzutu
 plot_with_pred &lt;- function(scatter, data, lm, intercept, coeff){
@@ -6376,7 +6397,7 @@ plot_with_pred &lt;- function(scatter, data, lm, intercept, coeff){
                        xaxis = list(title = &#39;&#39;))
 }</pre>
 
-</article></slide><slide class=''><hgroup><h2>Nanosimy oszacowaną funkcję liniowy na wykresy rozrzutu:</h2></hgroup><article  id="nanosimy-oszacowana-funkcje-liniowy-na-wykresy-rozrzutu-1" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Nanosimy oszacowaną funkcję liniowy na wykresy rozrzutu:</h2></hgroup><article  title-size="small" id="nanosimy-oszacowana-funkcje-liniowy-na-wykresy-rozrzutu" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'># funkcja nanosząca prognozę na wykres rozrzutu
 plot_with_pred &lt;- function(scatter, data, lm, intercept, coeff){
@@ -6394,12 +6415,12 @@ iris_nstd %&lt;&gt;%
     # tworzy kolumnę z wykresami rozrzutu wraz z prognozą
     mutate(scatter_with_pred = pmap(list(scatter, data, lm, intercept, coeff), plot_with_pred))</pre>
 
-</article></slide><slide class=''><hgroup><h2>Wykresy z oszacowaną funkcją liniową:</h2></hgroup><article  id="wykresy-z-oszacowana-funkcja-liniowa" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Wykresy z oszacowaną funkcją liniową:</h2></hgroup><article  title-size="medium" id="wykresy-z-oszacowana-funkcja-liniowa" class="top-bottom">
 
-<div id="htmlwidget-ad56e487df428a373779" style="width:840px;height:522px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ad56e487df428a373779">{"x":{"data":[{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"mode":"markers","name":"setosa","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(31,119,180,1)","line":{"color":"transparent"}},"xaxis":"x","yaxis":"y"},{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.05571525962959,4.71047040109078,4.8485683445063,4.77951937279854,5.12476423133735,5.33191114646063,4.98666628792182,4.98666628792182,4.64142142938302,4.77951937279854,5.19381320304511,4.98666628792182,4.71047040109078,4.71047040109078,5.40096011816839,5.67715600499943,5.33191114646063,5.05571525962959,5.26286217475287,5.26286217475287,4.98666628792182,5.19381320304511,5.12476423133735,4.91761731621406,4.98666628792182,4.71047040109078,4.98666628792182,5.05571525962959,4.98666628792182,4.8485683445063,4.77951937279854,4.98666628792182,5.47000908987615,5.53905806158391,4.77951937279854,4.8485683445063,5.05571525962959,5.12476423133735,4.71047040109078,4.98666628792182,5.05571525962959,4.22712759913646,4.8485683445063,5.05571525962959,5.26286217475287,4.71047040109078,5.26286217475287,4.8485683445063,5.19381320304511,4.91761731621406],"mode":"line+lines","name":"setosa","type":"scatter","hoverinfo":"text","text":["y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x"],"line":{"fillcolor":"rgba(255,127,14,1)","color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y"},{"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"y":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"mode":"markers","name":"versicolor","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(44,160,44,1)","line":{"color":"transparent"}},"xaxis":"x2","yaxis":"y"},{"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"y":[6.30798341968912,6.30798341968912,6.22147564766839,5.52941347150259,5.96195233160622,5.96195233160622,6.39449119170984,5.61592124352332,6.04846010362694,5.87544455958549,5.26989015544041,6.13496787564767,5.44290569948186,6.04846010362694,6.04846010362694,6.22147564766839,6.13496787564767,5.87544455958549,5.44290569948186,5.70242901554404,6.30798341968912,5.96195233160622,5.70242901554404,5.96195233160622,6.04846010362694,6.13496787564767,5.96195233160622,6.13496787564767,6.04846010362694,5.78893678756477,5.61592124352332,5.61592124352332,5.87544455958549,5.87544455958549,6.13496787564767,6.48099896373057,6.22147564766839,5.52941347150259,6.13496787564767,5.70242901554404,5.78893678756477,6.13496787564767,5.78893678756477,5.52941347150259,5.87544455958549,6.13496787564767,6.04846010362694,6.04846010362694,5.70242901554404,5.96195233160622],"mode":"line+lines","name":"versicolor","type":"scatter","hoverinfo":"text","text":["y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x"],"line":{"fillcolor":"rgba(255,127,14,1)","color":"rgba(214,39,40,1)"},"xaxis":"x2","yaxis":"y"},{"x":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"mode":"markers","name":"virginica","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(148,103,189,1)","line":{"color":"transparent"}},"xaxis":"x3","yaxis":"y"},{"x":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"y":[6.88190023939406,6.34097955339272,6.61143989639339,6.5212864487265,6.61143989639339,6.61143989639339,6.16067265805895,6.5212864487265,6.16067265805895,7.15236058239473,6.79174679172717,6.34097955339272,6.61143989639339,6.16067265805895,6.43113300105961,6.79174679172717,6.61143989639339,7.3326674777285,6.25082610572583,5.89021231505828,6.79174679172717,6.43113300105961,6.43113300105961,6.34097955339272,6.88190023939406,6.79174679172717,6.43113300105961,6.61143989639339,6.43113300105961,6.61143989639339,6.43113300105961,7.3326674777285,6.43113300105961,6.43113300105961,6.25082610572583,6.61143989639339,6.97205368706095,6.70159334406028,6.61143989639339,6.70159334406028,6.70159334406028,6.70159334406028,6.34097955339272,6.79174679172717,6.88190023939406,6.61143989639339,6.16067265805895,6.61143989639339,6.97205368706095,6.61143989639339],"mode":"line+lines","name":"virginica","type":"scatter","hoverinfo":"text","text":["y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x"],"line":{"fillcolor":"rgba(255,127,14,1)","color":"rgba(140,86,75,1)"},"xaxis":"x3","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,0.313333333333333],"title":"","anchor":"y"},"xaxis2":{"domain":[0.353333333333333,0.646666666666667],"title":"","anchor":"y"},"xaxis3":{"domain":[0.686666666666667,1],"title":"","anchor":"y"},"yaxis":{"domain":[0,1],"title":"Sepal.Length","anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10},"showlegend":false,"hovermode":"closest","annotations":[{"x":0.13,"y":1.03,"text":"setosa","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":1.03,"text":"versicolor","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.9,"y":1.03,"text":"virginica","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":-0.09,"text":"Sepal.Width","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}}]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"source":"A","subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+<div id="htmlwidget-e44d8ec1f4f45584255b" style="width:840px;height:522px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e44d8ec1f4f45584255b">{"x":{"data":[{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5,5,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5,5.5,4.9,4.4,5.1,5,4.5,4.4,5,5.1,4.8,5.1,4.6,5.3,5],"mode":"markers","name":"setosa","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(31,119,180,1)","line":{"color":"transparent"}},"xaxis":"x","yaxis":"y"},{"x":[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.6,3,3.4,3.5,2.3,3.2,3.5,3.8,3,3.8,3.2,3.7,3.3],"y":[5.05571525962959,4.71047040109078,4.8485683445063,4.77951937279854,5.12476423133735,5.33191114646063,4.98666628792182,4.98666628792182,4.64142142938302,4.77951937279854,5.19381320304511,4.98666628792182,4.71047040109078,4.71047040109078,5.40096011816839,5.67715600499943,5.33191114646063,5.05571525962959,5.26286217475287,5.26286217475287,4.98666628792182,5.19381320304511,5.12476423133735,4.91761731621406,4.98666628792182,4.71047040109078,4.98666628792182,5.05571525962959,4.98666628792182,4.8485683445063,4.77951937279854,4.98666628792182,5.47000908987615,5.53905806158391,4.77951937279854,4.8485683445063,5.05571525962959,5.12476423133735,4.71047040109078,4.98666628792182,5.05571525962959,4.22712759913646,4.8485683445063,5.05571525962959,5.26286217475287,4.71047040109078,5.26286217475287,4.8485683445063,5.19381320304511,4.91761731621406],"mode":"line+lines","name":"setosa","type":"scatter","hoverinfo":"text","text":["y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x","y = 2.64 + 0.69x"],"line":{"fillcolor":"rgba(255,127,14,1)","color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y"},{"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"y":[7,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5,5.9,6,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6,5.7,5.5,5.5,5.8,6,5.4,6,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5,5.6,5.7,5.7,6.2,5.1,5.7],"mode":"markers","name":"versicolor","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(44,160,44,1)","line":{"color":"transparent"}},"xaxis":"x2","yaxis":"y"},{"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2,3,2.2,2.9,2.9,3.1,3,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3,2.8,3,2.9,2.6,2.4,2.4,2.7,2.7,3,3.4,3.1,2.3,3,2.5,2.6,3,2.6,2.3,2.7,3,2.9,2.9,2.5,2.8],"y":[6.30798341968912,6.30798341968912,6.22147564766839,5.52941347150259,5.96195233160622,5.96195233160622,6.39449119170984,5.61592124352332,6.04846010362694,5.87544455958549,5.26989015544041,6.13496787564767,5.44290569948186,6.04846010362694,6.04846010362694,6.22147564766839,6.13496787564767,5.87544455958549,5.44290569948186,5.70242901554404,6.30798341968912,5.96195233160622,5.70242901554404,5.96195233160622,6.04846010362694,6.13496787564767,5.96195233160622,6.13496787564767,6.04846010362694,5.78893678756477,5.61592124352332,5.61592124352332,5.87544455958549,5.87544455958549,6.13496787564767,6.48099896373057,6.22147564766839,5.52941347150259,6.13496787564767,5.70242901554404,5.78893678756477,6.13496787564767,5.78893678756477,5.52941347150259,5.87544455958549,6.13496787564767,6.04846010362694,6.04846010362694,5.70242901554404,5.96195233160622],"mode":"line+lines","name":"versicolor","type":"scatter","hoverinfo":"text","text":["y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x","y = 3.54 + 0.87x"],"line":{"fillcolor":"rgba(255,127,14,1)","color":"rgba(214,39,40,1)"},"xaxis":"x2","yaxis":"y"},{"x":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"mode":"markers","name":"virginica","type":"scatter","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(148,103,189,1)","line":{"color":"transparent"}},"xaxis":"x3","yaxis":"y"},{"x":[3.3,2.7,3,2.9,3,3,2.5,2.9,2.5,3.6,3.2,2.7,3,2.5,2.8,3.2,3,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3,2.8,3,2.8,3.8,2.8,2.8,2.6,3,3.4,3.1,3,3.1,3.1,3.1,2.7,3.2,3.3,3,2.5,3,3.4,3],"y":[6.88190023939406,6.34097955339272,6.61143989639339,6.5212864487265,6.61143989639339,6.61143989639339,6.16067265805895,6.5212864487265,6.16067265805895,7.15236058239473,6.79174679172717,6.34097955339272,6.61143989639339,6.16067265805895,6.43113300105961,6.79174679172717,6.61143989639339,7.3326674777285,6.25082610572583,5.89021231505828,6.79174679172717,6.43113300105961,6.43113300105961,6.34097955339272,6.88190023939406,6.79174679172717,6.43113300105961,6.61143989639339,6.43113300105961,6.61143989639339,6.43113300105961,7.3326674777285,6.43113300105961,6.43113300105961,6.25082610572583,6.61143989639339,6.97205368706095,6.70159334406028,6.61143989639339,6.70159334406028,6.70159334406028,6.70159334406028,6.34097955339272,6.79174679172717,6.88190023939406,6.61143989639339,6.16067265805895,6.61143989639339,6.97205368706095,6.61143989639339],"mode":"line+lines","name":"virginica","type":"scatter","hoverinfo":"text","text":["y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x","y = 3.91 + 0.9x"],"line":{"fillcolor":"rgba(255,127,14,1)","color":"rgba(140,86,75,1)"},"xaxis":"x3","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,0.313333333333333],"title":"","anchor":"y"},"xaxis2":{"domain":[0.353333333333333,0.646666666666667],"title":"","anchor":"y"},"xaxis3":{"domain":[0.686666666666667,1],"title":"","anchor":"y"},"yaxis":{"domain":[0,1],"title":"Sepal.Length","anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10},"showlegend":false,"hovermode":"closest","annotations":[{"x":0.13,"y":1.03,"text":"setosa","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":1.03,"text":"versicolor","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.9,"y":1.03,"text":"virginica","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":-0.09,"text":"Sepal.Width","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}}]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"source":"A","subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
 
-</article></slide><slide class=''><hgroup><h2>Podejście to możemy wykorzystać np. do tworzenia heatmap:</h2></hgroup><article  id="podejscie-to-mozemy-wykorzystac-np.-do-tworzenia-heatmap" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Podejście to możemy wykorzystać np. do tworzenia heatmap:</h2></hgroup><article  title-size="small" id="podejscie-to-mozemy-wykorzystac-np.-do-tworzenia-heatmap" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;%
     mutate(data_2 = map(data, function(x) { # funkcja przekształcająca dane w postać macierzową
@@ -6410,7 +6431,7 @@ iris_nstd %&lt;&gt;%
             spread(Sepal.Width, n, fill = 0) # rozprasza dane do postaci macierzowej
         }),</pre>
 
-</article></slide><slide class=''><hgroup><h2>Podejście to możemy wykorzystać np. do tworzenia heatmap:</h2></hgroup><article  id="podejscie-to-mozemy-wykorzystac-np.-do-tworzenia-heatmap-1" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Podejście to możemy wykorzystać np. do tworzenia heatmap:</h2></hgroup><article  title-size="small" id="podejscie-to-mozemy-wykorzystac-np.-do-tworzenia-heatmap-1" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;%
     mutate(data_2 = map(data, function(x) { # funkcja przekształcająca dane w postać macierzową
@@ -6422,7 +6443,7 @@ iris_nstd %&lt;&gt;%
         }),
         matrix = map(data_2, as.matrix, dimnames = NULL), # przekształca df w macierz</pre>
 
-</article></slide><slide class=''><hgroup><h2>Podejście to możemy wykorzystać np. do tworzenia heatmap:</h2></hgroup><article  id="podejscie-to-mozemy-wykorzystac-np.-do-tworzenia-heatmap-2" class="top-bottom" title-size="small">
+</article></slide><slide class=''><hgroup><h2>Podejście to możemy wykorzystać np. do tworzenia heatmap:</h2></hgroup><article  title-size="small" id="podejscie-to-mozemy-wykorzystac-np.-do-tworzenia-heatmap-2" class="top-bottom">
 
 <pre class = 'prettyprint lang-r'>iris_nstd %&lt;&gt;%
     mutate(data_2 = map(data, function(x) { # funkcja przekształcająca dane w postać macierzową
@@ -6444,19 +6465,19 @@ iris_nstd %&lt;&gt;%
                           plotly::layout(xaxis = list(showgrid = F), 
                                          yaxis = list(showgrid = F))))</pre>
 
-</article></slide><slide class=''><hgroup><h2>Efektem są takie oto heatmapy:</h2></hgroup><article  id="efektem-sa-takie-oto-heatmapy" class="top-bottom" title-size="medium">
+</article></slide><slide class=''><hgroup><h2>Efektem są takie oto heatmapy:</h2></hgroup><article  title-size="medium" id="efektem-sa-takie-oto-heatmapy" class="top-bottom">
 
-<div id="htmlwidget-e44d8ec1f4f45584255b" style="width:840px;height:522px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e44d8ec1f4f45584255b">{"x":{"data":[{"colorbar":{"title":"","ticklen":2},"colorscale":[["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0.0442708333333333","rgba(243,249,252,1)"],["0.0625","rgba(239,247,250,1)"],["0.0625","rgba(239,247,250,1)"],["0.0677083333333333","rgba(237,246,250,1)"],["0.1171875","rgba(225,240,247,1)"],["0.125","rgba(223,240,246,1)"],["0.153645833333333","rgba(215,236,244,1)"],["0.1875","rgba(207,232,242,1)"],["0.190104166666667","rgba(206,232,242,1)"],["0.239583333333333","rgba(193,226,239,1)"],["0.40625","rgba(151,206,228,1)"],["0.526041666666667","rgba(120,191,220,1)"],["0.653645833333333","rgba(88,176,211,1)"],["1","rgba(0,135,189,1)"]],"showscale":false,"z":[[1,3,1,0,0],[0,4,16,3,0],[0,0,9,8,2],[0,0,0,2,1]],"y":[4.5,5,5.5,6],"x":["2.5","3","3.5","4","4.5"],"hoverinfo":"z","type":"heatmap","xaxis":"x","yaxis":"y"},{"colorbar":{"title":"","ticklen":2},"colorscale":[["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0.00833333333333333","rgba(252,254,254,1)"],["0.0611111111111111","rgba(239,247,250,1)"],["0.113888888888889","rgba(225,241,247,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.177777777777778","rgba(209,233,243,1)"],["0.2","rgba(204,231,241,1)"],["0.216666666666667","rgba(199,229,240,1)"],["0.266666666666667","rgba(187,223,237,1)"],["0.266666666666667","rgba(187,223,237,1)"],["0.308333333333333","rgba(176,218,234,1)"],["0.388888888888889","rgba(155,208,229,1)"],["0.577777777777777","rgba(107,185,216,1)"],["1","rgba(0,135,189,1)"]],"showscale":false,"z":[[1,2,0,0],[0,5,3,0],[0,2,15,2],[0,3,7,2],[0,0,4,4]],"y":[5,5.5,6,6.5,7],"x":["2","2.5","3","3.5"],"hoverinfo":"z","type":"heatmap","xaxis":"x2","yaxis":"y"},{"colorbar":{"title":"","ticklen":2},"colorscale":[["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0.048611111111111","rgba(242,249,251,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.114583333333333","rgba(225,241,247,1)"],["0.166666666666667","rgba(212,235,244,1)"],["0.166666666666667","rgba(212,235,244,1)"],["0.208333333333333","rgba(201,230,241,1)"],["0.333333333333333","rgba(170,215,233,1)"],["0.361111111111111","rgba(162,211,231,1)"],["0.5","rgba(127,195,222,1)"],["0.506944444444444","rgba(125,194,221,1)"],["0.600694444444443","rgba(101,182,215,1)"],["1","rgba(0,135,189,1)"]],"showscale":false,"z":[[1,0,0,0],[2,6,0,0],[1,12,6,0],[1,2,7,0],[0,4,1,1],[0,4,0,2]],"y":[5,6,6.5,7,7.5,8],"x":["2.5","3","3.5","4"],"hoverinfo":"z","type":"heatmap","xaxis":"x3","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,0.313333333333333],"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2.5","3","3.5","4","4.5"],"anchor":"y"},"xaxis2":{"domain":[0.353333333333333,0.646666666666667],"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2","2.5","3","3.5"],"anchor":"y"},"xaxis3":{"domain":[0.686666666666667,1],"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2.5","3","3.5","4"],"anchor":"y"},"yaxis":{"domain":[0,1],"showgrid":false,"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10},"showlegend":false,"annotations":[{"x":0.13,"y":1.07,"text":"setosa","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":1.07,"text":"versicolor","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.9,"y":1.07,"text":"virginica","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":-0.09,"text":"Sepal.Width","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":-0.08,"y":0.5,"text":"Sepal.Length","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15,"family":"Open Sans"},"textangle":270}]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"source":"A","subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+<div id="htmlwidget-b414400dbd030a480aa1" style="width:840px;height:522px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b414400dbd030a480aa1">{"x":{"data":[{"colorbar":{"title":"","ticklen":2},"colorscale":[["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0.0442708333333333","rgba(243,249,252,1)"],["0.0625","rgba(239,247,250,1)"],["0.0625","rgba(239,247,250,1)"],["0.0677083333333333","rgba(237,246,250,1)"],["0.1171875","rgba(225,240,247,1)"],["0.125","rgba(223,240,246,1)"],["0.153645833333333","rgba(215,236,244,1)"],["0.1875","rgba(207,232,242,1)"],["0.190104166666667","rgba(206,232,242,1)"],["0.239583333333333","rgba(193,226,239,1)"],["0.40625","rgba(151,206,228,1)"],["0.526041666666667","rgba(120,191,220,1)"],["0.653645833333333","rgba(88,176,211,1)"],["1","rgba(0,135,189,1)"]],"showscale":false,"z":[[1,3,1,0,0],[0,4,16,3,0],[0,0,9,8,2],[0,0,0,2,1]],"y":[4.5,5,5.5,6],"x":["2.5","3","3.5","4","4.5"],"hoverinfo":"z","type":"heatmap","xaxis":"x","yaxis":"y"},{"colorbar":{"title":"","ticklen":2},"colorscale":[["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0.00833333333333333","rgba(252,254,254,1)"],["0.0611111111111111","rgba(239,247,250,1)"],["0.113888888888889","rgba(225,241,247,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.133333333333333","rgba(221,239,246,1)"],["0.177777777777778","rgba(209,233,243,1)"],["0.2","rgba(204,231,241,1)"],["0.216666666666667","rgba(199,229,240,1)"],["0.266666666666667","rgba(187,223,237,1)"],["0.266666666666667","rgba(187,223,237,1)"],["0.308333333333333","rgba(176,218,234,1)"],["0.388888888888889","rgba(155,208,229,1)"],["0.577777777777777","rgba(107,185,216,1)"],["1","rgba(0,135,189,1)"]],"showscale":false,"z":[[1,2,0,0],[0,5,3,0],[0,2,15,2],[0,3,7,2],[0,0,4,4]],"y":[5,5.5,6,6.5,7],"x":["2","2.5","3","3.5"],"hoverinfo":"z","type":"heatmap","xaxis":"x2","yaxis":"y"},{"colorbar":{"title":"","ticklen":2},"colorscale":[["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0","rgba(255,255,255,1)"],["0.048611111111111","rgba(242,249,251,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.0833333333333333","rgba(233,245,249,1)"],["0.114583333333333","rgba(225,241,247,1)"],["0.166666666666667","rgba(212,235,244,1)"],["0.166666666666667","rgba(212,235,244,1)"],["0.208333333333333","rgba(201,230,241,1)"],["0.333333333333333","rgba(170,215,233,1)"],["0.361111111111111","rgba(162,211,231,1)"],["0.5","rgba(127,195,222,1)"],["0.506944444444444","rgba(125,194,221,1)"],["0.600694444444443","rgba(101,182,215,1)"],["1","rgba(0,135,189,1)"]],"showscale":false,"z":[[1,0,0,0],[2,6,0,0],[1,12,6,0],[1,2,7,0],[0,4,1,1],[0,4,0,2]],"y":[5,6,6.5,7,7.5,8],"x":["2.5","3","3.5","4"],"hoverinfo":"z","type":"heatmap","xaxis":"x3","yaxis":"y"}],"layout":{"xaxis":{"domain":[0,0.313333333333333],"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2.5","3","3.5","4","4.5"],"anchor":"y"},"xaxis2":{"domain":[0.353333333333333,0.646666666666667],"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2","2.5","3","3.5"],"anchor":"y"},"xaxis3":{"domain":[0.686666666666667,1],"showgrid":false,"type":"category","categoryorder":"array","categoryarray":["2.5","3","3.5","4"],"anchor":"y"},"yaxis":{"domain":[0,1],"showgrid":false,"anchor":"x"},"margin":{"b":40,"l":60,"t":25,"r":10},"showlegend":false,"annotations":[{"x":0.13,"y":1.07,"text":"setosa","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":1.07,"text":"versicolor","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.9,"y":1.07,"text":"virginica","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":0.5,"y":-0.09,"text":"Sepal.Width","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15}},{"x":-0.08,"y":0.5,"text":"Sepal.Length","showarrow":false,"xref":"paper","yref":"paper","font":{"size":15,"family":"Open Sans"},"textangle":270}]},"config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud","sendDataToCloud"],"displayModeBar":false},"source":"A","subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
 
 </article></slide><slide class=''><hgroup><h2>Korzyści ze stosowania purrra:</h2></hgroup><article  id="korzysci-ze-stosowania-purrra">
 
 <ul>
 <li>przetrzymujemy wszystko w jednej ramce danych - łatwiej rozeznać się co zostało już zrobione i znaleźć to czego potrzebujemy</li>
-<li>kod jest bardziej zwięzły, bez powtórzeń</li>
+<li>kod jest bardziej zwięzły, bez powtórzeń (mniej błedów wynikających np. z kopiowania kodu)</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section-1" pic="final"></article></slide>
+</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  pic="final" id="section-1"></article></slide>
 
 
   <slide class="backdrop"></slide>
