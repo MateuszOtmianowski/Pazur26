@@ -401,7 +401,7 @@ res_sqrt <- map(list_of_lists, ~ map(., sqrt))
 ```
 Jak to działa?
 
-Zewnętrzny map iteruje po listach i przekazuje każdą z nich do drugiej funkcji map, która z kolei iteruje po elementach tej listy. <br>
+Zewnętrzny map iteruje po listach i przekazuje każdą z nich do drugiej funkcji map, która z kolei iteruje po elementach tych list. <br>
 Rezultatem jest taka oto sekwencja:
 
 - map(list_of_lists[[1]], sqrt)
