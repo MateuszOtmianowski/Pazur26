@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=latin-ext');
+
+slides > slide {
+  color: #000;
+}
+
+aside.gdbar {
+  display: none;
+}
+
+a:hover {
+    color: red;
+}
+
+article.top-bottom,
+article.left-right,
+article.side-by-side {
+  position: relative;
+  margin-top: 10px !important;
+}
+
+article.top-bottom p,
+article.left-right p,
+article.side-by-side p {
+  text-align: justify;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+article.top-bottom img {
+  display: block;
+  margin: auto; 
+}
+
+article.left-right .slide-text {
+  position: absolute;
+  top: 75px;
+  width: 500px;
+  left: 460px;
+}
+
+article.side-by-side .slide-text {
+  position: absolute;
+  top: 50px;
+  width: 330px;
+  left: 630px;
+}
+
+slide.tiny h2 {
+  font-size: 25px;
+  line-height: 35px;
+}
+
+slide.small h2 {
+  font-size: 35px;
+  line-height: 45px;
+}
+
+slide.medium h2 {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.title-slide {
+  background-color:#003057;
+  padding-top:0;
+  padding-bottom:0;
+  padding-left:30px;
+  padding-right:30px;
+}
+
+.title-slide hgroup h1 {
+  color:#d4eae4 !important;
+  font-size: 30px;
+  margin: 0;
+  font-weight:normal;
+  padding-right:60px;
+  padding-left:30px;
+}
+
+.title-slide hgroup h2 {
+  color:#d4eae4 !important;
+  font-size: 48px;
+  margin: 10px 0 160px 0;
+  padding-right:60px;
+  padding-left:30px;
+}
+
+.title-slide hgroup p {
+  color: #fff;
+}
+
+.title-slide-left img {
+  width:160px;
+  margin-top:20px;
+}
+
+.title-slide-right img {
+  height:100%;
+}
+
+.title-slide-date {
+  position:absolute;
+  left:50px;
+  bottom:50px;
+  letter-spacing: -2px;
+  font-weight:600;
+  font-size:24px;
+}
+
+.title-author-credentials {
+  float:right;
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:8px;
+}
+
+.title-slide-left, .title-slide-right {
+  width:50%;
+  float:left;
+  height:100%;
+}
+
+.title-slide-logo {
+    height:80px;
+    position:absolute;
+    top:60px;
+    left:43px;
+}
+
+.title-slide hgroup {
+    bottom:auto;
+    top:0px;
+    height: 100%;
+    padding-top:200px;
+}
+
+.title-slide hgroup p  {
+    position: absolute;
+    bottom: 260px;
+    left: 0px;
+    padding-left:30px;
+}
+
+slides > slide#undefined:before {
+  width: 100px;
+  height: 45px;
+  background-size: 100px 45px;
+}
+
+slides > slide:not(#undefined):before {
+  display: none;
+}
+
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+
+slides > slide:not(.nobackground):before {
+  bottom: 10px !important;
+}
+
+h2, h3 {
+  color: #007fa3;
+  font-weight: 600;
+}
+
+slides > slide.backdrop {
+  background: white;
+}
+
+/*create background pictures*/
+#divider_blue {
+    background-image: url('img/divider_blue.jpg');
+}
+
+#divider_green {
+    background-image: url('img/divider_green.jpg');
+}
+
+#divider_grey {
+    background-image: url('img/divider_grey.jpg');
+}
+
+#divider_grue {
+    background-image: url('img/divider_grue.jpg');
+}
+
+#divider_sea {
+    background-image: url('img/divider_sea.jpg');
+}
+
+#state_dark {
+    background-image: url('img/state_dark.jpg');
+}
+
+#state_light {
+    background-image: url('img/state_light.jpg');
+}
+
+#final {
+    background-image: url('img/final.jpg');
+}
+
+#divider_blue, #divider_green, #divider_grey, #divider_grue, #divider_sea,
+#state_dark, #state_light,
+#final {
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: 115% auto;
+    background-repeat: no-repeat;
+}
+
+slides > slide#divider_blue hgroup h2,
+slides > slide#divider_green hgroup h2,
+slides > slide#divider_grue hgroup h2,
+slides > slide#divider_grey hgroup h2,
+slides > slide#divider_sea hgroup h2,
+slides > slide#state_dark hgroup h2,
+slides > slide#state_light hgroup h2 {
+  font-family: Open Sans;
+  font-size: 36pt;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div#before-column p.forceBreak {
+    break-before: column;
+}
+div#after-column p.forceBreak {
+    break-after: column;
+}
+
+/* Create a class to style plot captions */
+.plot-caption {
+    font-size: 16px; 
+    line-height:20px;
+    font-style: italic;
+    text-align:center;
+    margin-bottom: 15px;
+}
+
+/* Presenter mode */
+.with-notes.popup slide.backdrop {
+    background-image:none;
+    background-color:#000;
+}
